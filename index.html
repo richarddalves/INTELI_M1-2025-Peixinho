@@ -13,12 +13,22 @@
         
         <style>
             body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                margin: 0;
-            }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      /* Remover qualquer rolagem ou espaço extra */
+      height: 100vh;
+      /* Faz a body sempre ocupar a altura total do viewport */
+      overflow: hidden;
+    }
+
+    /* Aqui está o truque: definir o canvas para caber na tela */
+    canvas {
+      max-width: 100%;   /* não ultrapassa a largura da tela */
+      height: auto;      /* ajusta a altura para manter proporção */
+      display: block;    /* remove eventuais “espaços” de inline-block */
+    }
         </style>
 
         <!-- Inclui a biblioteca phaser -->
